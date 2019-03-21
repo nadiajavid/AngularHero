@@ -1,0 +1,27 @@
+<h1>Heros Component !</h1>
+<h2>
+  <ul class="heroes">
+    <li [class.selected]="hero.name ===selectedHero" *ngFor="let hero of heroes" (click)="nFunction(hero)">
+      ID:{{hero.id}} <span>Name:{{hero.name}}</span>
+    </li>
+  </ul>
+</h2>
+<h3 *ngIf="selectedHero">Select Hero: {{selectedHero}}</h3>
+
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedHero" placeholder="name" />
+  </label>
+</div>
+
+
+<h1>START DETAILS</h1>
+<app-pet-detail [personsDetail]="selectedHero"></app-pet-detail>
+<h1>END DETAILS</h1>
+
+<h3>Trying to Display List!</h3>
+List: <div *ngFor="let pet of petsList">
+  ID:{{pet.id}} <span>PetNAme</span></div>
+
+<br>
+Star: {{star}}
